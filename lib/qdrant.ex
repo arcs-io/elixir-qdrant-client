@@ -143,4 +143,19 @@ defmodule Qdrant do
   def get_points(collection_name, points_body, consistency \\ nil) do
     api_call("Points", :get_points, [collection_name, points_body, consistency])
   end
+
+  @doc """
+  Delete points by specified IDs
+
+  Example:
+  ```elixir
+  body = %{
+    ids: [1, 2, 3]
+  }
+  Qdrant.delete_points("collection_name", body)
+  ```
+  """
+  def delete_points(collection_name, points_body, consistency \\ nil) do
+    api_call("Points", :delete_points, [collection_name, points_body, consistency])
+  end
 end
