@@ -79,7 +79,7 @@ defmodule Qdrant do
 
   For full documentation check: [Qdrant Upsert Points](https://qdrant.github.io/qdrant/redoc/index.html#tag/points/operation/upsert_points)
   """
-  def upsert_point(collection_name, body, wait \\ false, ordering \\ nil) do
+  def upsert_points(collection_name, body, wait \\ false, ordering \\ nil) do
     api_call("Points", :upsert_points, [collection_name, body, wait, ordering])
   end
 
